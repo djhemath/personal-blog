@@ -23,6 +23,7 @@
     padding: 15px;
     border-radius: 5px;
     cursor: pointer;
+    background-color: transparent;
 }
 
 .theme-switch button:hover {
