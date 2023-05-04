@@ -15,7 +15,7 @@
 
 .theme-switch {
     position: absolute;
-    right: 10px;
+    right: 0px;
 }
 
 .theme-switch button {
@@ -33,4 +33,10 @@
     color: #222222;
     width: 25px;
     height: 25px;
+}
+
+@media only screen and (min-width: 600px) {
+    .theme-switch {
+        right: 10px;
+    }
 }
