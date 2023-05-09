@@ -12,32 +12,3 @@
 .logo {
 
 }
-
-.theme-switch {
-    position: absolute;
-    right: 0px;
-}
-
-.theme-switch button {
-    border: none;
-    padding: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: transparent;
-}
-
-.theme-switch button:hover {
-    background-color: #e9e9e9;
-}
-
-.theme-switch svg {
-    color: #222222;
-    width: 25px;
-    height: 25px;
-}
-
-@media only screen and (min-width: 600px) {
-    .theme-switch {
-        right: 10px;
-    }
-}

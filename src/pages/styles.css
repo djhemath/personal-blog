@@ -1,7 +1,13 @@
+:root {
+    --background: #F0F0F0;
+    --text: #222222;
+    --hover: #E9E9E9;
+}
+
 body {
     margin: 0;
-    background-color: #F0F0F0;
-    color: #222222;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 /* Mobile - 375px */
