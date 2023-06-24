@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 
 import { PostCard } from '@/components/PostCard/PostCard';
 import styles from './posts.module.css';
+import WithMeta from '@/components/WithMeta/WithMeta';
 
 dotenv.config();
 
@@ -21,21 +22,23 @@ type PostsProps = {
 
 export default function Posts({ posts }: PostsProps) {
     return (
-        <div className={styles['posts-container']}>
-            {
-                posts.map((post) => (
-                    <PostCard
-                        key={post.id}
-                        id={post.id}
-                        date={post.date}
-                        description={post.excerpt}
-                        image={post.image}
-                        slug={post.slug}
-                        title={post.title}
-                    />
-                ))
-            }
-        </div>
+        <WithMeta>
+            <div className={styles['posts-container']}>
+                {
+                    posts.map((post) => (
+                        <PostCard
+                            key={post.id}
+                            id={post.id}
+                            date={post.date}
+                            description={post.excerpt}
+                            image={post.image}
+                            slug={post.slug}
+                            title={post.title}
+                        />
+                    ))
+                }
+            </div>
+        </WithMeta>
     );
 }
 
