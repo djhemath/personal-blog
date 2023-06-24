@@ -1,24 +1,58 @@
+import dayjs from 'dayjs';
+import dotenv from 'dotenv';
+
 import { PostCard } from '@/components/PostCard/PostCard';
 import styles from './posts.module.css';
 
-type PostsProps = {};
+dotenv.config();
 
-export default function Posts({}: PostsProps) {
+type Post = {
+    id: number,
+    title: string,
+    excerpt: string,
+    image: string,
+    slug: string,
+    date: number,
+};
+
+type PostsProps = {
+    posts: Post[]
+};
+
+export default function Posts({ posts }: PostsProps) {
     return (
         <div className={styles['posts-container']}>
             {
-                new Array(5).fill('*').map((_, i) => (
+                posts.map((post) => (
                     <PostCard
-                        key={i}
-                        id={1}
-                        date={1687545000000}
-                        description={"In this post, I'm gonna share my first experience with french cuisine that I had in my last trip to Pondicherry with my friends."}
-                        image={'https://upload.wikimedia.org/wikipedia/commons/6/6a/Jacques_Lameloise%2C_escab%C3%A8che_d%27%C3%A9crevisses_sur_gaspacho_d%27asperge_et_cresson.jpg'}
-                        slug='tried-french-cuisine-for-the-first-time'
-                        title='Tried French Cuisine for the first time'
+                        key={post.id}
+                        id={post.id}
+                        date={post.date}
+                        description={post.excerpt}
+                        image={post.image}
+                        slug={post.slug}
+                        title={post.title}
                     />
                 ))
             }
         </div>
     );
+}
+
+export async function getStaticProps() {
+    const postsResponse = await fetch(process.env.POST_INDEX_URL);
+    const postsJSON: any[] = await postsResponse.json();
+
+    const posts: Post[] = postsJSON.map(post => {
+        return {
+            ...post,
+            date: dayjs(post.date).unix() * 1000
+        }
+    });
+
+    return {
+        props: {
+            posts,
+        },
+    };
 }
