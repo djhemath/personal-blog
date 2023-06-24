@@ -1,5 +1,7 @@
 .post {
     max-width: 60%;
+    min-width: 60%;
+    min-height: 175px;
     background-color: var(--card-bg);
     padding: 20px;
     border-radius: 26px;
@@ -44,6 +46,8 @@
 @media only screen and (min-width: 600px) {
     .post {
         max-width: 400px;
+        min-width: 400px;
+        min-height: 190px;
         padding-left: 140px;
     }
 
