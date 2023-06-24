@@ -1,0 +1,67 @@
+.post {
+    max-width: 60%;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 26px;
+    position: relative;
+    padding-left: 100px;
+    cursor: pointer;
+}
+
+.post h1 {
+    color: var(--text);
+    font-size: 18px;
+}
+
+.post p {
+    font-size: 14px;
+}
+
+.post .post-date {
+    font-size: 14px;
+}
+
+.post-image-container {
+    width: 100px;
+    height: 100px;
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #efefef;
+}
+
+.post:hover {
+    box-shadow: 0 0 50px 1px var(--card-hover-shadow);
+    transform: scale(1.01);
+}
+
+
+@media only screen and (min-width: 600px) {
+    .post {
+        max-width: 400px;
+        padding-left: 140px;
+    }
+
+    .post-image-container {
+        width: 170px;
+        height: 170px;
+        left: -50px;
+    }
+
+    .post h1 {
+        font-size: 24px;
+    }
+    
+    .post p {
+        font-size: 16px;
+    }
+    
+    .post .post-date {
+        font-size: 16px;
+    }
+}
