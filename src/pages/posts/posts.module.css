@@ -1,0 +1,14 @@
+.posts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    justify-items: center;
+    padding-bottom: 40px;
+}
+
+@media only screen and (min-width: 1440px) {
+    .posts-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 100px;
+    }
+}

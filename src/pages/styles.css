@@ -1,7 +1,11 @@
 :root {
     --background: #F0F0F0;
     --text: #222222;
+    --text-80: #4D4D4D;
+    --text-70: #5F5F5F;
     --hover: #E9E9E9;
+    --card-bg: #FFFFFF;
+    --card-hover-shadow: #CCCCCC;
 }
 
 body {
@@ -30,6 +34,6 @@ body {
 
 @media only screen and (min-width: 1440px) {
     .container {
-        max-width: 1000px;
+        max-width: 1300px;
     }
 }
