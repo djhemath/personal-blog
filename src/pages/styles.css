@@ -6,12 +6,20 @@
     --hover: #E9E9E9;
     --card-bg: #FFFFFF;
     --card-hover-shadow: #CCCCCC;
+    --link-text: #222222;
+    --link-background: #7be4f7a2;
 }
 
 body {
     margin: 0;
     background-color: var(--background);
     color: var(--text);
+}
+
+a {
+    color: var(--link-text);
+    background-color: var(--link-background);
+    padding: 0 5px;
 }
 
 /* Mobile - 375px */
@@ -34,11 +42,15 @@ body {
 
 @media only screen and (min-width: 1440px) {
     .container {
-        max-width: 1300px;
+        max-width: 1000px;
     }
 }
 
 /* Post detail */
+
+.post-detail {
+    padding-bottom: 50px;
+}
 
 .post-detail h1 {
     font-size: 36px;

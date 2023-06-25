@@ -7,6 +7,8 @@ export type ThemeSettings = {
     hover: string,
     cardBG: string,
     cardHoverShadow: string,
+    linkText: string,
+    linkBackground: string,
 };
 
 export const themes: Theme[] = ['LIGHT', 'DARK'];
@@ -19,16 +21,20 @@ export const lightTheme: ThemeSettings = {
     hover: '#E9E9E9',
     cardBG: '#FFFFFF',
     cardHoverShadow: '#CCCCCC',
+    linkText: '#222222',
+    linkBackground: '#7be4f7a2',
 };
 
 export const darkTheme: ThemeSettings = {
     background: '#161616',
-    text: '#ededed',
+    text: '#d3d3d3',
     text80: '#E3E3E3',
     text70: '#BBBBBB',
     hover: '#262626',
     cardBG: '#2F2F2F',
     cardHoverShadow: '#222222',
+    linkText: '#222222',
+    linkBackground: '#7be4f7a2',
 };
 
 export function getInitialThemeScript () {
@@ -49,6 +55,8 @@ export function getInitialThemeScript () {
         root.style.setProperty('--hover', theme[localTheme].hover);
         root.style.setProperty('--card-bg', theme[localTheme].cardBG);
         root.style.setProperty('--card-hover-shadow', theme[localTheme].cardHoverShadow);
+        root.style.setProperty('--link-text', theme[localTheme].linkText);
+        root.style.setProperty('--link-background', theme[localTheme].linkBackground);
       })();
     `;
     return { __html: script };
@@ -65,6 +73,8 @@ export function updateRootCSSVariables(theme: Theme) {
         hover: '',
         cardBG: '',
         cardHoverShadow: '',
+        linkText: '',
+        linkBackground: '',
     };
 
     if(theme === 'LIGHT') {
@@ -80,4 +90,6 @@ export function updateRootCSSVariables(theme: Theme) {
     root.style.setProperty('--hover', themeSettings.hover);
     root.style.setProperty('--card-bg', themeSettings.cardBG);
     root.style.setProperty('--card-hover-shadow', themeSettings.cardHoverShadow);
+    root.style.setProperty('--link-text', themeSettings.linkText);
+    root.style.setProperty('--link-background', themeSettings.linkBackground);
 }
