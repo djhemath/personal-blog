@@ -4,17 +4,9 @@ import dotenv from 'dotenv';
 import { PostCard } from '@/components/PostCard/PostCard';
 import styles from './posts.module.css';
 import WithMeta from '@/components/WithMeta/WithMeta';
+import { Post } from '@/types';
 
 dotenv.config();
-
-type Post = {
-    id: number,
-    title: string,
-    excerpt: string,
-    image: string,
-    slug: string,
-    date: number,
-};
 
 type PostsProps = {
     posts: Post[]
