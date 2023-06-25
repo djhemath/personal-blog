@@ -13,6 +13,7 @@
 .reset-link {
     color: unset;
     text-decoration: none;
+    background-color: unset !important;
 }
 
 .post h1 {
