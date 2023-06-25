@@ -22,7 +22,7 @@ export function PostCard({
     date,
 }: PostCardProps) {
     return (
-        <Link href={`/posts/${slug}`} className={styles['reset-link']}>
+        <Link href={`/${slug}`} className={styles['reset-link']}>
             <div className={styles.post}>
                 <div className={styles['post-image-container']} style={{backgroundImage: `url('${image}')`}}></div>
                 <div className={styles['post-content']}>
