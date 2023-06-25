@@ -89,7 +89,7 @@ export const getStaticProps: GetStaticProps<PostDetailProps> = async (context) =
     const postsResponse = await fetch(process.env.POST_INDEX_URL);
     const postsJSON: any[] = await postsResponse.json();
 
-    const posts: Post[] = postsJSON.map(post => {
+    const posts: Post[] = postsJSON.filter(post => !(post.private)).map(post => {
         return {
             ...post,
             date: dayjs(post.date).unix() * 1000
@@ -119,7 +119,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const postsResponse = await fetch(process.env.POST_INDEX_URL);
     const postsJSON: any[] = await postsResponse.json();
 
-    const paths: any[] = postsJSON.map(post => {
+    const paths: any[] = postsJSON.filter(post => !(post.private)).map(post => {
         return {
             params: {
                 slug: post.slug

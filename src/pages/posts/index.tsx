@@ -17,17 +17,17 @@ export default function Posts({ posts }: PostsProps) {
         <WithMeta>
             <div className={styles['posts-container']}>
                 {
-                    posts.map((post) => (
-                        <PostCard
-                            key={post.id}
-                            id={post.id}
-                            date={post.date}
-                            description={post.excerpt}
-                            image={post.image}
-                            slug={post.slug}
-                            title={post.title}
-                        />
-                    ))
+                        posts.map((post) => (
+                            <PostCard
+                                key={post.id}
+                                id={post.id}
+                                date={post.date}
+                                description={post.excerpt}
+                                image={post.image}
+                                slug={post.slug}
+                                title={post.title}
+                            />
+                        ))
                 }
             </div>
         </WithMeta>
@@ -38,7 +38,7 @@ export async function getStaticProps() {
     const postsResponse = await fetch(process.env.POST_INDEX_URL);
     const postsJSON: any[] = await postsResponse.json();
 
-    const posts: Post[] = postsJSON.map(post => {
+    const posts: Post[] = postsJSON.filter(post => !(post.private)).map(post => {
         return {
             ...post,
             date: dayjs(post.date).unix() * 1000
