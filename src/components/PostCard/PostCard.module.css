@@ -10,6 +10,11 @@
     cursor: pointer;
 }
 
+.reset-link {
+    color: unset;
+    text-decoration: none;
+}
+
 .post h1 {
     color: var(--text);
     font-size: 18px;
