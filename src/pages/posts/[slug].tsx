@@ -1,13 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import type { GetStaticPaths, GetStaticProps } from 'next';
 
-import dark from 'react-syntax-highlighter/dist/cjs/styles/prism/a11y-dark'
 import dayjs from 'dayjs';
 import dotenv from 'dotenv';
 import matter from 'gray-matter';
 import { ParsedUrlQuery } from "querystring";
+import { FiCalendar } from "react-icons/fi"
 import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import dark from 'react-syntax-highlighter/dist/cjs/styles/prism/a11y-dark';
 
 import * as config from '@/config';
 import { Post } from "@/types";
@@ -33,14 +34,23 @@ export default function PostDetail({
             title={title + '-' + (config.SITE_TITLE || process.env.SITE_TITLE)}
             description={excerpt}
         >
-            <article>
-                <figure>
-                    <img
-                        src={image}
-                        alt={title + " blog post's hero image"}
-                    />
-                </figure>
-                <h1>{title}</h1>
+            <article className='post-detail'>
+                <section className='head'>
+                    <figure>
+                        <img
+                            src={image}
+                            alt={title + " blog post's hero image"}
+                        />
+                    </figure>
+
+                    <h1>{title}</h1>
+
+                    <div className='date-container'>
+                        <FiCalendar />
+                        <span>25 June, 2023</span>
+                    </div>
+                </section>
+
                 <ReactMarkdown
                     components={{
                         code({node, inline, className, children, ...props}) {
