@@ -1,0 +1,40 @@
+.no-posts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.no-posts img {
+    width: 90%;
+}
+
+.no-posts h1 {
+    font-size: 18px;
+}
+
+.no-posts h2 {
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+    .no-posts img {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .no-posts h1 {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .no-posts img {
+        width: 25%;
+    }
+}
