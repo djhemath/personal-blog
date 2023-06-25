@@ -5,6 +5,7 @@ import { PostCard } from '@/components/PostCard/PostCard';
 import styles from './posts.module.css';
 import WithMeta from '@/components/WithMeta/WithMeta';
 import { Post } from '@/types';
+import NoPosts from '@/components/NoPosts/NoPosts';
 
 dotenv.config();
 
@@ -17,6 +18,8 @@ export default function Posts({ posts }: PostsProps) {
         <WithMeta>
             <div className={styles['posts-container']}>
                 {
+                    posts.length > 0
+                    ?
                         posts.map((post) => (
                             <PostCard
                                 key={post.id}
@@ -28,6 +31,8 @@ export default function Posts({ posts }: PostsProps) {
                                 title={post.title}
                             />
                         ))
+                    :
+                        <NoPosts />
                 }
             </div>
         </WithMeta>
