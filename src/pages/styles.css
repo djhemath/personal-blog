@@ -32,6 +32,12 @@ a {
     padding: 0 5px;
 }
 
+.link-without-decorations {
+    color: unset !important;
+    background-color: unset !important;
+    padding: 0px !important;
+}
+
 /* Mobile - 375px */
 .container {
     max-width: 90%;
