@@ -16,6 +16,16 @@ body {
     color: var(--text);
 }
 
+.post-detail p, li {
+    font-size: 18px !important;
+    line-height: 28px;
+    word-wrap: break-word;
+}
+
+.post-detail li {
+    margin-bottom: 20px;
+}
+
 a {
     color: var(--link-text);
     background-color: var(--link-background);
@@ -32,6 +42,11 @@ a {
     .container {
         max-width: 80%;
     }
+
+    .post-detail p, li {
+        font-size: 20px !important;
+        line-height: 32px;
+    }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -43,6 +58,13 @@ a {
 @media only screen and (min-width: 1440px) {
     .container {
         max-width: 1000px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .post-detail {
+        max-width: 680px;
+        margin: auto;
     }
 }
 
@@ -79,7 +101,6 @@ a {
 @media only screen and (min-width: 1000px) {
     .post-detail img {
         width: 100%;
-        height: 50vh;
         object-fit: cover;
     }
 }
