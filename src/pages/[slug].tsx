@@ -47,7 +47,7 @@ export default function PostDetail({
 
                     <div className='date-container'>
                         <FiCalendar />
-                        <span>25 June, 2023</span>
+                        <span>{ dayjs(date).format("DD MMMM, YYYY") }</span>
                     </div>
                 </section>
 
