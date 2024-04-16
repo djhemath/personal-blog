@@ -28,6 +28,7 @@ export default function WithMeta({
                 <meta charSet="utf-8" />
                 <title>{_title}</title>
                 <meta name="Description" content={_description} />
+                <meta name="google-site-verification" content="XC98imSjr5gpZ4h77aHwzZuzblahyA1eCWaP1rpbR7k" />
             </Head>
 
             <section>
