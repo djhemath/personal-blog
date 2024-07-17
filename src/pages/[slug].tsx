@@ -36,12 +36,18 @@ export default function PostDetail({
         >
             <article className='post-detail'>
                 <section className='head'>
-                    <figure>
-                        <img
-                            src={image}
-                            alt={title + " blog post's hero image"}
-                        />
-                    </figure>
+                    {
+                        image
+                        ?   (
+                                <figure>
+                                    <img
+                                        src={image}
+                                        alt={title + " blog post's hero image"}
+                                    />
+                                </figure>
+                            )
+                        :   null
+                    }
 
                     <h1>{title}</h1>
 
@@ -107,7 +113,7 @@ export const getStaticProps: GetStaticProps<PostDetailProps> = async (context) =
         props: {
             title: post.title,
             excerpt: post.excerpt,
-            image: post.image,
+            image: post.image ?? '',
             date: post.date,
             content: parsedMarkdown.content,
         },
